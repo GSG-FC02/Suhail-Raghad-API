@@ -9,7 +9,11 @@ window.addEventListener('load' , displayCurrent)
 function displayGlobal(){
     document.querySelector(".global-time").innerHTML = " "
     let inputTxt = input.value.trim();
-    fetch(`http://worldtimeapi.org/api/timezone/${inputTxt}`)
+    if (inputTxt == ""){
+        alert("please write a location !");
+    }
+    else{
+        fetch(`http://worldtimeapi.org/api/timezone/${inputTxt}`)
     .then(response => {return response.json()})
     .then(data => {
 
@@ -34,6 +38,8 @@ function displayGlobal(){
 
 })
 }
+    }
+    
 
 // Diplay current
 function displayCurrent(){
