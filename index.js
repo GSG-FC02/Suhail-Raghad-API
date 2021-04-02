@@ -13,7 +13,7 @@ function displayGlobal(){
         alert("please write a location !");
     }
     else{
-        fetch(`http://worldtimeapi.org/api/timezone/${inputTxt}`)
+        fetch(`https://worldtimeapi.org/api/timezone/${inputTxt}`)
     .then(response => {return response.json()})
     .then(data => {
 
@@ -35,15 +35,14 @@ function displayGlobal(){
         document.querySelector(".global-time").append(dateH2) 
         let newDateTxt = dateH2.textContent
         dateH2.textContent = newDateTxt.slice(0,newDateTxt.indexOf("T"))
-
-})
+        })
+} 
 }
-    }
     
 
 // Diplay current
 function displayCurrent(){
-    fetch("http://worldtimeapi.org/api/ip")
+    fetch("https://worldtimeapi.org/api/ip")
     .then(response => {return response.json()})
     .then(data => {
         let locationCurrent = document.createElement("h2")
